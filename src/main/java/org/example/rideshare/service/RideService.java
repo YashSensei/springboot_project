@@ -92,7 +92,6 @@ public class RideService {
     // Complete a ride (Driver or Passenger)
     public RideResponse completeRide(String rideId) {
         String userId = getCurrentUserId();
-        String role = getCurrentUserRole();
 
         Ride ride = rideRepository.findById(rideId)
                 .orElseThrow(() -> new NotFoundException("Ride not found with id: " + rideId));
